@@ -1,6 +1,6 @@
 let carouselInner = document.querySelector('.carousel-inner')
 
-fetch('http://127.0.0.1:8000/main/get-blog')
+fetch('https://ayyubxon.pythonanywhere.com/main/get-blog')
 .then(res=>res.json())
 .then(data =>{
         data ? renderCarousel(data) : ''

@@ -145,7 +145,7 @@
           <h1 class="mb-4" id="course-title" style="color: #fb873f;"></h1>
           
           <p id="course-description"></p>
-          <a    target="_blank"
+          <a    target="download"
                 id="download_btn"
                 type="button"
                 class="btn btn-success py-md-2  px-md-3 right-0 m-2"
@@ -219,7 +219,7 @@
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
 
-    fetch('http://127.0.0.1:8000/main/get-blog')
+    fetch('https://ayyubxon.pythonanywhere.com/main/get-blog')
       .then(res => res.json())
       .then(data => {
         const selectedItem = data.find(item => item.id == id);
@@ -306,7 +306,7 @@
       const params = new URLSearchParams(window.location.search);
       const id     = params.get('id');
   
-      fetch('http://127.0.0.1:8000/main/get-blog')
+      fetch('https://ayyubxon.pythonanywhere.com/main/get-blog')
         .then(res => res.json())
         .then(data => {
           const selectedItem = data.find(item => item.id == id);
@@ -325,7 +325,7 @@
           // 2) testId’ni o‘zlashtiramiz
           testId = selectedItem.test;
           // 3) shu testId bilan savollarni yuklashga o‘tamiz
-          return fetch(`http://127.0.0.1:8000/main/tests/${testId}/`);
+          return fetch(`https://ayyubxon.pythonanywhere.com/main/tests/${testId}/`);
         })
         .then(res => {
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -356,7 +356,7 @@
         }
   
         // UI uchun ham, serverga ham
-        fetch(`http://127.0.0.1:8000/main/tests/${testId}/submit/`, {
+        fetch(`https://ayyubxon.pythonanywhere.com/main/tests/${testId}/submit/`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ answers })
