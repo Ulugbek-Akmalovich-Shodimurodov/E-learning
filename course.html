@@ -320,7 +320,7 @@
           document.getElementById('course-video-container').innerHTML = selectedItem.link;
           document.getElementById('lab_id').textContent            = `${selectedItem.id} - amaliyot`;
           document.getElementById('mashq_id').textContent          = `${selectedItem.id} - mashq`;
-          document.getElementById('download_btn').href             = `http://127.0.0.1:8000${selectedItem.file}`;
+          document.getElementById('download_btn').href             = `https://ayyubxon.pythonanywhere.com/${selectedItem.file}`;
   
           // 2) testId’ni o‘zlashtiramiz
           testId = selectedItem.test;
