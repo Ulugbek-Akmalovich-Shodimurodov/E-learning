@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Axborot xavfsizligi protokollari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <!-- Favicon -->
+  <link href="img/TATU-01.png" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .btn-success:hover {
+        background-color: transparent !important;
+        color: #fff !important;
+        border-color: #28a745 !important;
+        background-color: #28a745 !important;
+    }
+
+    /* Qayta ishlash (btn-primary) tugma - default outline stili */
+    .btn-primary {
+    background-color: transparent !important;
+    color: #06BBCC !important;     
+    border: 1px solid #06BBCC !important;
+    transition: all 0.2s;
+    }
+
+    /* Hover va focus holatida fonni primary rangga, text oq rangga o‘zgartiramiz */
+    .btn-primary:hover{
+    background-color: #06BBCC !important;
+    color: #fff !important;
+    border-color: #06BBCC !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #fb873f !important;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+       class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+      <p class="m-0 fw-bold" style="font-size: 25px;">
+        <img src="img/TATU-01.png" alt="" height="50">TATU <span style="color: #fb873f;">Nurafshon</span>
+      </p>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="index.html" class="nav-item nav-link">Bosh sahifa</a>
+        <a href="courses.html" class="nav-item nav-link">Amaliyot mashg'ulotlari</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Header Start -->
+  <div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <h1 class="display-3 text-white animated slideInDown" id="lab_id">Amaliyot</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a class="text-white" href="index.html">Bosh sahifa</a></li>
+              <li class="breadcrumb-item text-white active" aria-current="page">Amaliyot</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header End -->
+
+  <!-- About Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Video qutisi -->
+        <div class="container my-4">
+          <div class="row justify-content-center">
+            <div class="container-fluid p-0">
+              <div class="video-wrapper">
+                <div id="course-video-container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+          <h6 class="section-title bg-white text-start pe-3" id="mashq_id">MASHQ</h6>
+          <h1 class="mb-4" id="course-title" style="color: #fb873f;"></h1>
+          
+          <p id="course-description"></p>
+          <a    target="_blank"
+                id="download_btn"
+                type="button"
+                class="btn btn-success py-md-2  px-md-3 right-0 m-2"
+              >Amaliyot fayli <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+              </svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Test Section Start -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <h2 class="mb-4 w-100 text-center" style="color: #fb873f;">
+          Mavzu yuzasidan test savollari
+        </h2>
+        <div class="col-lg-8">
+          <form id="test-form">
+            <!-- Bu wrapper ichida savollar bo‘ladi -->
+            <div id="questions-wrapper">
+              <div id="questions-container"></div>
+            </div>
+
+            <!-- Tugma va natija -->
+            <div class="mt-4 d-flex align-items-center">
+              <button
+                id="action-btn"
+                type="button"
+                class="btn btn-success py-md-3 px-md-5"
+              >Natijani bilish</button>
+              <span id="result-display" class="ms-3 fw-bold"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Test Section End -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark text-light footer m-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <h4 class="text-white mb-3">Kontakt</h4>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>TATU Nurafshon filiali</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+998 93 717 77 39</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+  <!-- Course Data Fetch -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    fetch('http://127.0.0.1:8000/main/get-blog')
+      .then(res => res.json())
+      .then(data => {
+        const selectedItem = data.find(item => item.id == id);
+        console.log(data);
+        
+        if (selectedItem) {
+          document.getElementById('course-title').textContent = selectedItem.title;
+          document.getElementById('course-description').innerHTML = selectedItem.description;
+          document.getElementById('course-video-container').innerHTML = selectedItem.link;
+          document.getElementById('lab_id').textContent = selectedItem.id + ' - amaliyot';
+          document.getElementById('mashq_id').textContent = selectedItem.id + ' - mashq';
+          document.getElementById('download_btn').href = 'http://127.0.0.1:8000/' + selectedItem.file
+        } else {
+          document.body.innerHTML = '<p>Ma’lumot topilmadi.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  </script>
+
+  <!-- Test Load, Render & Submit -->
+  <script>
+    const wrapper        = document.getElementById('questions-wrapper');
+    const container      = document.getElementById('questions-container');
+    const actionBtn      = document.getElementById('action-btn');
+    const resultDisplay  = document.getElementById('result-display');
+    let originalQuestions= [];
+    let testId           = null;
+    let isSubmitted      = false;
+  
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+  
+    function renderQuestions(questions) {
+      container.innerHTML     = '';
+      resultDisplay.innerHTML = '';
+      actionBtn.textContent   = 'Natijani bilish';
+      actionBtn.className     = 'btn btn-success py-md-3 px-md-5';
+      isSubmitted             = false;
+      wrapper.style.display   = 'block';
+  
+      questions.forEach((q, idx) => {
+        const opts  = shuffleArray([...q.options]);
+        const block = document.createElement('div');
+        block.className = 'mb-4';
+  
+        const title = document.createElement('h5');
+        title.textContent = `${idx + 1}. ${q.question}`;
+        block.appendChild(title);
+  
+        opts.forEach(opt => {
+          const fc = document.createElement('div');
+          fc.className = 'form-check mb-2';
+  
+          const rd = document.createElement('input');
+          rd.className = 'form-check-input';
+          rd.type      = 'radio';
+          rd.name      = `question_${q.id}`;
+          rd.id        = `opt_${opt.id}`;
+          rd.value     = opt.id;
+  
+          const lbl = document.createElement('label');
+          lbl.className = 'form-check-label';
+          lbl.htmlFor  = rd.id;
+          lbl.textContent = opt.answer;
+  
+          fc.appendChild(rd);
+          fc.appendChild(lbl);
+          block.appendChild(fc);
+        });
+  
+        container.appendChild(block);
+      });
+    }
+  
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1) get-blog’dan data olib, testId’ni aniqlaymiz
+      const params = new URLSearchParams(window.location.search);
+      const id     = params.get('id');
+  
+      fetch('http://127.0.0.1:8000/main/get-blog')
+        .then(res => res.json())
+        .then(data => {
+          const selectedItem = data.find(item => item.id == id);
+          if (!selectedItem) {
+            throw new Error('Blog item topilmadi');
+          }
+  
+          // kurs ma’lumotlarini chiqarish
+          document.getElementById('course-title').textContent       = selectedItem.title;
+          document.getElementById('course-description').innerHTML  = selectedItem.description;
+          document.getElementById('course-video-container').innerHTML = selectedItem.link;
+          document.getElementById('lab_id').textContent            = `${selectedItem.id} - amaliyot`;
+          document.getElementById('mashq_id').textContent          = `${selectedItem.id} - mashq`;
+          document.getElementById('download_btn').href             = `http://127.0.0.1:8000${selectedItem.file}`;
+  
+          // 2) testId’ni o‘zlashtiramiz
+          testId = selectedItem.test;
+          // 3) shu testId bilan savollarni yuklashga o‘tamiz
+          return fetch(`http://127.0.0.1:8000/main/tests/${testId}/`);
+        })
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          return res.json();
+        })
+        .then(json => {
+          originalQuestions = json.test.questions;
+          renderQuestions(originalQuestions);
+        })
+        .catch(err => {
+          console.error(err);
+          container.innerHTML = '<p class="text-danger">Amaliyotga test biriktirilmagan! 🫢</p>';
+        });
+    });
+  
+    actionBtn.addEventListener('click', () => {
+      if (!isSubmitted) {
+        const answers = Array.from(container.children).map(div => {
+          const name = div.querySelector('input').name;
+          const qid  = parseInt(name.split('_')[1], 10);
+          const ch   = div.querySelector('input:checked');
+          return { question: qid, answer: ch ? parseInt(ch.value, 10) : null };
+        });
+  
+        const missing = answers.find(a => a.answer === null);
+        if (missing) {
+          return alert(`Diqqat! Javobi belgilanmagan test(lar) bor.`);
+        }
+  
+        // UI uchun ham, serverga ham
+        fetch(`http://127.0.0.1:8000/main/tests/${testId}/submit/`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ answers })
+        }).catch(e => console.error(e));
+  
+        let correctCount = 0;
+        answers.forEach(ans => {
+          const qObj = originalQuestions.find(q => q.id === ans.question);
+          const opt  = qObj.options.find(o => o.id === ans.answer);
+          if (opt && opt.is_correct) correctCount++;
+        });
+        const total = originalQuestions.length;
+        const pct   = Math.round((correctCount / total) * 100);
+  
+        resultDisplay.className = 'ms-3 fw-bold ' +
+          (pct < 60 ? 'text-danger' :
+           pct <= 70 ? 'text-warning' :
+                       'text-success');
+        resultDisplay.textContent = `Natijangiz: ${pct}% (${correctCount}/${total})`;
+  
+        wrapper.style.display = 'none';
+        actionBtn.textContent = 'Qayta ishlash';
+        actionBtn.className   = 'btn btn-primary py-md-3 px-md-5';
+        isSubmitted           = true;
+      } else {
+        renderQuestions(originalQuestions);
+      }
+    });
+  </script>  
+</body>
+</html>
